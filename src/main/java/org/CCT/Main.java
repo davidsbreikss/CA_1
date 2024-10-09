@@ -6,49 +6,59 @@ import org.CCT.FileHandler.CustomerWriter;
 import org.CCT.Processor.CustomerProcessor;
 
 import java.io.*;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
-
-    private static final String INPUT_FILE_PATH = "resources/customers.txt";
-    private static final String OUTPUT_FILE_PATH = "resources/customerDiscount.txt";
     public static void main(String[] args) {
 
+        String inputFilePath = getFilePathFromResources("customers.txt");
+        String outputFilePath = getFilePathFromResources("output/customerDiscount.txt");
+
+        // Ensure both paths are valid
+        if (inputFilePath == null || outputFilePath == null) {
+            System.err.println("Could not load file paths from resources.");
+            return;
+        }
+
+        // Create instances of the CustomerReader, CustomerProcessor, and CustomerWriter
+        CustomerReader customerReader = new CustomerReader();
+        CustomerProcessor customerProcessor = new CustomerProcessor();
+        CustomerWriter customerWriter = new CustomerWriter();
+
         try {
-            String currentDir = System.getProperty("user.dir");
-            String absoluteInputPath = currentDir + File.separator + INPUT_FILE_PATH;
-            String absoluteOutputPath = currentDir + File.separator + OUTPUT_FILE_PATH;
+            // Step 1: Read customers from the input file
+            List<Customer> customers = customerReader.readCustomers(inputFilePath);
 
-            System.out.println("Reading from: " + absoluteInputPath);
+            // Step 2: Process the customers (apply discounts)
+            List<Customer> processedCustomers = customerProcessor.processCustomers(customers);
 
-            // Print file contents
-            System.out.println("File contents:");
-            try (BufferedReader reader = new BufferedReader(new FileReader(absoluteInputPath))) {
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-            }
-            System.out.println("End of file contents");
+            // Step 3: Write the processed customers to the output file
+            customerWriter.writeCustomers(processedCustomers, outputFilePath);
 
-            CustomerReader reader = new CustomerReader();
-            CustomerWriter writer = new CustomerWriter();
-            CustomerProcessor processor = new CustomerProcessor();
-
-            List<Customer> customers = reader.readCustomers(absoluteInputPath);
-            System.out.println("Customers read: " + customers.size());
-
-            List<Customer> processedCustomers = processor.processCustomers(customers);
-            System.out.println("Customers processed: " + processedCustomers.size());
-
-            System.out.println("Writing to: " + absoluteOutputPath);
-            writer.writeCustomers(processedCustomers, absoluteOutputPath);
-
-            System.out.println("Data processed successfully");
-            System.out.println("Total customer data processed: " + processedCustomers.size());
-
+            System.out.println("Customers processed and written to: " + outputFilePath);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            // Handle any exceptions that occur during file I/O
+            System.err.println("Error reading or writing customer data: " + e.getMessage());
+        }
+
+    }
+
+    private static String getFilePathFromResources(String fileName) {
+        // Use the class loader to locate the resource
+        URL resource = Main.class.getClassLoader().getResource(fileName);
+        if (resource == null) {
+            System.err.println("File not found in resources: " + fileName);
+            return null;
+        }
+
+        try {
+            // Convert URL to URI and then to a valid file path
+            return Paths.get(resource.toURI()).toString();
+        } catch (Exception e) {
+            System.err.println("Error converting file path: " + e.getMessage());
+            return null;
         }
     }
 }
