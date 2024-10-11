@@ -3,8 +3,10 @@ package org.CCT;
 import org.CCT.Entity.Customer;
 import org.CCT.FileHandler.CustomerReader;
 import org.CCT.FileHandler.CustomerWriter;
+import org.CCT.Loggers.Logger;
 import org.CCT.Processor.CustomerProcessor;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
@@ -17,9 +19,12 @@ public class Main {
         String inputFilePath = getFilePathFromResources("customers.txt");
         String outputFilePath = "output/customerDiscount.txt"; // Set output path relative to project root
 
+        Logger logger = new Logger();
+
         // Ensure both paths are valid
         if (inputFilePath == null) {
             System.err.println("Could not load file paths from resources.");
+            logger.log(Main.class.getSimpleName(), "Error", "Could not load file paths from resources.");
             return;
         }
 
@@ -43,9 +48,11 @@ public class Main {
             customerWriter.writeCustomers(processedCustomers, outputFilePath);
 
             System.out.println("Customers processed and written to: " + outputFilePath);
+            logger.log(Main.class.getSimpleName(), "INFO", "Customers processed and written to: " + outputFilePath);
         } catch (IOException e) {
             // Handle any exceptions that occur during file I/O
             System.err.println("Error reading or writing customer data: " + e.getMessage());
+            logger.log(Main.class.getSimpleName(), "ERROR", "Error reading or writing customer data: " + e.getMessage());
         }
     }
 

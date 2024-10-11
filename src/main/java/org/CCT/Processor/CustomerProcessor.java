@@ -1,13 +1,12 @@
 package org.CCT.Processor;
 
 import org.CCT.Entity.Customer;
+import org.CCT.Loggers.Logger;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CustomerProcessor {
-    // File path where customer data is stored
-    private static final String filePath = "resources/customer.txt";
 
     // Regular expressions for validating names
     private static final String NAME_VALIDATION = "[a-zA-Z]+"; // Only letters for first name
@@ -29,6 +28,16 @@ public class CustomerProcessor {
     private static final double DISCOUNT_5_PERCENTAGE = 0.05;
     private static final double DISCOUNT_3_PERCENTAGE = 0.03;
 
+    private final Logger logger;
+
+    public CustomerProcessor(Logger logger) {
+        this.logger = logger;
+    }
+
+    public CustomerProcessor() {
+        this.logger = new Logger(); // Initialize a default Logger
+    }
+
     // Method to process a list of Customer objects
     public List<Customer> processCustomers(List<Customer> customers) {
         // Filter valid customers and apply discounts
@@ -37,9 +46,9 @@ public class CustomerProcessor {
                 .map(this::applyDiscount) // Apply discounts to valid customers
                 .collect(Collectors.toList()); // Collect the results into a list
 
-        // Print the number of customers before and after processing
-        System.out.println("Customers before processing: " + customers.size());
-        System.out.println("Customers after processing: " + processedCustomers.size());
+        // Print the number of customers before and after processing into file
+        logger.log(this.getClass().getSimpleName(), "INFO", "Customers in input file before processing: " + customers.size());
+        logger.log(this.getClass().getSimpleName(), "INFO", "Customers in output file after processing: " + processedCustomers.size());
         return processedCustomers; // Return the list of processed customers
     }
 
@@ -67,6 +76,7 @@ public class CustomerProcessor {
         // Print an error message if the customer is invalid
         if (!isValid) {
             System.out.println("Invalid customer: " + customer);
+            logger.log(this.getClass().getSimpleName(), "ERROR", "This customer has invalid data: " + customer);
         }
 
         return isValid; // Return the validation result
