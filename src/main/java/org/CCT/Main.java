@@ -7,17 +7,18 @@ import org.CCT.Processor.CustomerProcessor;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         String inputFilePath = getFilePathFromResources("customers.txt");
-        String outputFilePath = getFilePathFromResources("output/customerDiscount.txt");
+        String outputFilePath = "output/customerDiscount.txt"; // Set output path relative to project root
 
         // Ensure both paths are valid
-        if (inputFilePath == null || outputFilePath == null) {
+        if (inputFilePath == null) {
             System.err.println("Could not load file paths from resources.");
             return;
         }
@@ -34,7 +35,11 @@ public class Main {
             // Step 2: Process the customers (apply discounts)
             List<Customer> processedCustomers = customerProcessor.processCustomers(customers);
 
-            // Step 3: Write the processed customers to the output file
+            // Step 3: Ensure the output directory exists
+            Path outputPath = Paths.get(outputFilePath);
+            Files.createDirectories(outputPath.getParent()); // Create the output directory if it doesn't exist
+
+            // Step 4: Write the processed customers to the output file
             customerWriter.writeCustomers(processedCustomers, outputFilePath);
 
             System.out.println("Customers processed and written to: " + outputFilePath);
@@ -42,7 +47,6 @@ public class Main {
             // Handle any exceptions that occur during file I/O
             System.err.println("Error reading or writing customer data: " + e.getMessage());
         }
-
     }
 
     private static String getFilePathFromResources(String fileName) {
