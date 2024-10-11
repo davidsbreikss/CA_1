@@ -1,3 +1,0 @@
-2024-10-11T19:00:16.612749700 [method name isValidCustomer]: ERROR This customer has invalid data: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
-2024-10-11T19:00:16.612749700 [method name processCustomers]: INFO Customers in input file before processing: 8
-2024-10-11T19:00:16.612749700 [method name processCustomers]: INFO Customers in output file after processing: 7
