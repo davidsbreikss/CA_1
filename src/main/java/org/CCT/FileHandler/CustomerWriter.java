@@ -26,7 +26,7 @@ public class CustomerWriter {
     private String formatCustomer(Customer customer) {
         // Create a formatted string with the customer's full name and discounted value
         // The discounted value is formatted to two decimal places
-        return String.format("%s,%.2f",
+        return String.format("%s\n%.2f",
                 customer.getFullName(),         // Full name of the customer
                 customer.getDiscountedValue()); // Discounted value of the customer
     }

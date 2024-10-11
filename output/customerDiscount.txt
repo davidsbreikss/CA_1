@@ -1,7 +1,14 @@
-Sam Weiss,455.01
-Cristiani Eccher,1477.31
-Declan Walsh,189.70
-Barry Smart,2780.00
-Katie White,78.00
-Peter Nolan,159.80
-Patrick Moss,79.20
+Sam Weiss
+455.01
+Cristiani Eccher
+1477.31
+Declan Walsh
+189.70
+Barry Smart
+2780.00
+Katie White
+78.00
+Peter Nolan
+159.80
+Patrick Moss
+79.20
