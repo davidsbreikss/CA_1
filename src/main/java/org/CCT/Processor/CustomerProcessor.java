@@ -68,19 +68,45 @@ public class CustomerProcessor {
 
     // Method to check if a Customer object is valid based on various criteria
     private boolean isValidCustomer(Customer customer) {
-        // Validate customer properties and check if the customer is valid
-        boolean isValid = isValidName(customer.getFullName()) &&
-                validateCustomerClass(customer.getCustomerClass()) &&
-                validateLastPurchaseYear(customer.getLastPurchase()) &&
-                validateTotalPurchase(customer.getTotalPurchase());
+        boolean isValid = true;
 
-        // Print an error message if the customer is invalid
-        if (!isValid) {
-            System.out.println("Invalid customer: " + customer);
-            logger.log(this.getClass().getSimpleName(), "ERROR", "This customer has invalid data: " + customer);
+        // Validate full name and log error if invalid
+        if (!isValidName(customer.getFullName())) {
+            logger.log(this.getClass().getSimpleName(), "ERROR",
+                    "Invalid full name for customer: " + customer.getFullName());
+            isValid = false;
         }
 
-        return isValid; // Return the validation result
+        // Validate customer class and log error if invalid
+        if (!validateCustomerClass(customer.getCustomerClass())) {
+            logger.log(this.getClass().getSimpleName(), "ERROR",
+                    "Invalid customer class for customer: " + customer.getFullName() +
+                            ". Class: " + customer.getCustomerClass());
+            isValid = false;
+        }
+
+        // Validate last purchase year and log error if invalid
+        if (!validateLastPurchaseYear(customer.getLastPurchase())) {
+            logger.log(this.getClass().getSimpleName(), "ERROR",
+                    "Invalid last purchase year for customer: " + customer.getFullName() +
+                            ". Year: " + customer.getLastPurchase());
+            isValid = false;
+        }
+
+        // Validate total purchase and log error if invalid
+        if (!validateTotalPurchase(customer.getTotalPurchase())) {
+            logger.log(this.getClass().getSimpleName(), "ERROR",
+                    "Invalid total purchase for customer: " + customer.getFullName() +
+                            ". Total: " + customer.getTotalPurchase());
+            isValid = false;
+        }
+
+        if (!isValid) {
+            logger.log(this.getClass().getSimpleName(), "ERROR",
+                    "Customer data is invalid: " + customer);
+        }
+
+        return isValid;
     }
 
     // Method to calculate the discounted value based on customer class and last purchase year
