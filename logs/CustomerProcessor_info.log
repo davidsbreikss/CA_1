@@ -1,4 +1,0 @@
-2024-10-11T19:17:54.950839200 [method name: processCustomers]: INFO Customers in input file before processing: 8
-2024-10-11T19:17:54.950839200 [method name: processCustomers]: INFO Customers in output file after processing: 7
-2024-10-11T19:18:09.054050800 [method name: processCustomers]: INFO Customers in input file before processing: 8
-2024-10-11T19:18:09.054050800 [method name: processCustomers]: INFO Customers in output file after processing: 7

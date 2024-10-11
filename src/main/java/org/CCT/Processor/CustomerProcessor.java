@@ -30,8 +30,9 @@ public class CustomerProcessor {
 
     private final Logger logger;
 
+    // initiate CustomerProcessor instance
     public CustomerProcessor(Logger logger) {
-        this.logger = logger;
+        this.logger = logger; // Initialize a Logger
     }
 
     public CustomerProcessor() {

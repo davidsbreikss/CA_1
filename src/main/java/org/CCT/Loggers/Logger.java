@@ -7,9 +7,10 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
 public class Logger {
-
+    // Initiate log folder
     private static final String LOG_FOLDER = "logs";
 
+    // initiate Logger instance which has createLogFolder method
     public Logger() {
         createLogFolder();
     }
