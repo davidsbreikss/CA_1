@@ -28,8 +28,18 @@ public class Logger {
 
     // Log messages based on the class name
     public void log(String className, String level, String message) {
-        String logFileName = className + ".log"; // Each class gets its own log file
-        String methodName = "method name " + Thread.currentThread().getStackTrace()[2].getMethodName(); // current method name
+        // Get the current method name dynamically
+        String methodName = "method name: " + Thread.currentThread().getStackTrace()[2].getMethodName();
+
+        // Determine the log file based on the log level automatically
+        String logFileName;
+        if (level.equalsIgnoreCase("ERROR")) {
+            logFileName = className + "_error.log";
+        } else {
+            logFileName = className + "_info.log"; // For non-error messages, use info by default
+        }
+
+        // Try writing to the appropriate log file
         try (PrintWriter writer = new PrintWriter(new FileWriter(new File(LOG_FOLDER, logFileName), true))) {
             String logMessage = String.format("%s [%s]: %s %s", LocalDateTime.now(), methodName, level, message);
             writer.println(logMessage);

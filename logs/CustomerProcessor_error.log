@@ -1,0 +1,2 @@
+2024-10-11T19:17:54.949839100 [method name: isValidCustomer]: ERROR This customer has invalid data: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-11T19:18:09.053050200 [method name: isValidCustomer]: ERROR This customer has invalid data: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)

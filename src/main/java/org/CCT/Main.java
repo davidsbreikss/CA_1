@@ -6,7 +6,6 @@ import org.CCT.FileHandler.CustomerWriter;
 import org.CCT.Loggers.Logger;
 import org.CCT.Processor.CustomerProcessor;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
