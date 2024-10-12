@@ -4,6 +4,7 @@ import org.CCT.Entity.Customer;
 import org.CCT.Loggers.Logger;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CustomerProcessor {
@@ -20,13 +21,11 @@ public class CustomerProcessor {
     private static final int MAX_CUSTOMER_YEAR = 2024; // Maximum valid year for last purchase
 
     // Discount percentages based on customer class and last purchase year
-    private static final double DISCOUNT_30_PERCENTAGE = 0.30;
-    private static final double DISCOUNT_20_PERCENTAGE = 0.20;
-    private static final double DISCOUNT_15_PERCENTAGE = 0.15;
-    private static final double DISCOUNT_10_PERCENTAGE = 0.10;
-    private static final double DISCOUNT_13_PERCENTAGE = 0.13;
-    private static final double DISCOUNT_5_PERCENTAGE = 0.05;
-    private static final double DISCOUNT_3_PERCENTAGE = 0.03;
+    private static final double[][] DISCOUNTS = {
+            {0.30, 0.20, 0.10}, // Class 1
+            {0.15, 0.13, 0.05}, // Class 2
+            {0.03, 0.00, 0.00}  // Class 3
+    };
 
     private final Logger logger;
 
@@ -41,129 +40,95 @@ public class CustomerProcessor {
 
     // Method to process a list of Customer objects
     public List<Customer> processCustomers(List<Customer> customers) {
-        // Filter valid customers and apply discounts
         List<Customer> processedCustomers = customers.stream()
-                .filter(this::isValidCustomer) // Validate each customer
-                .map(this::applyDiscount) // Apply discounts to valid customers
-                .collect(Collectors.toList()); // Collect the results into a list
+                .map(this::applyDiscount)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
 
-        // Print the number of customers before and after processing into file
-        logger.log(this.getClass().getSimpleName(), "INFO", "Customers in input file before processing: " + customers.size());
-        logger.log(this.getClass().getSimpleName(), "INFO", "Customers in output file after processing: " + processedCustomers.size());
-        return processedCustomers; // Return the list of processed customers
+        logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Customers in input file before processing: " + customers.size());
+        logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Customers in output file after processing: " + processedCustomers.size());
+        return processedCustomers;
     }
 
     // Method to apply discount to a Customer object
-    private Customer applyDiscount(Customer customer) {
-        double discountedValue = customerDiscount(customer); // Calculate discounted value
-        // Return a new Customer object with the updated discounted value
-        return new Customer(
+    private Optional<Customer> applyDiscount(Customer customer) {
+        if (!isValidCustomer(customer)) return Optional.empty();
+
+        double discountedValue = calculateDiscount(customer);
+        return Optional.of(new Customer(
                 customer.getFullName(),
                 customer.getTotalPurchase(),
                 customer.getCustomerClass(),
                 customer.getLastPurchase(),
                 discountedValue
-        );
+        ));
     }
 
     // Method to check if a Customer object is valid based on various criteria
     private boolean isValidCustomer(Customer customer) {
         boolean isValid = true;
 
-        // Validate full name and log error if invalid
-        if (!isValidName(customer.getFullName())) {
-            logger.log(this.getClass().getSimpleName(), "ERROR",
-                    "Invalid full name for customer: " + customer.getFullName());
-            isValid = false;
-        }
-
-        // Validate customer class and log error if invalid
-        if (!validateCustomerClass(customer.getCustomerClass())) {
-            logger.log(this.getClass().getSimpleName(), "ERROR",
-                    "Invalid customer class for customer: " + customer.getFullName() +
-                            ". Class: " + customer.getCustomerClass());
-            isValid = false;
-        }
-
-        // Validate last purchase year and log error if invalid
-        if (!validateLastPurchaseYear(customer.getLastPurchase())) {
-            logger.log(this.getClass().getSimpleName(), "ERROR",
-                    "Invalid last purchase year for customer: " + customer.getFullName() +
-                            ". Year: " + customer.getLastPurchase());
-            isValid = false;
-        }
-
-        // Validate total purchase and log error if invalid
-        if (!validateTotalPurchase(customer.getTotalPurchase())) {
-            logger.log(this.getClass().getSimpleName(), "ERROR",
-                    "Invalid total purchase for customer: " + customer.getFullName() +
-                            ". Total: " + customer.getTotalPurchase());
-            isValid = false;
-        }
+        // Validate and log errors
+        isValid &= validateField(customer.getFullName(), this::isValidName,
+                "Invalid full name for customer: " + customer.getFullName());
+        isValid &= validateField(customer.getCustomerClass(), this::validateCustomerClass,
+                "Invalid customer class for customer: " + customer.getFullName() + ". Class: " + customer.getCustomerClass());
+        isValid &= validateField(customer.getLastPurchase(), this::validateLastPurchaseYear,
+                "Invalid last purchase year for customer: " + customer.getFullName() + ". Year: " + customer.getLastPurchase());
+        isValid &= validateField(customer.getTotalPurchase(), this::validateTotalPurchase,
+                "Invalid total purchase for customer: " + customer.getFullName() + ". Total: " + customer.getTotalPurchase());
 
         if (!isValid) {
-            logger.log(this.getClass().getSimpleName(), "ERROR",
-                    "Customer data is invalid: " + customer);
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Customer data is invalid: " + customer);
         }
 
         return isValid;
     }
 
-    // Method to calculate the discounted value based on customer class and last purchase year
-    private double customerDiscount(Customer customer) {
-        int customerClass = customer.getCustomerClass();
-        int lastPurchaseYear = customer.getLastPurchase();
-        int currentYear = 2024; // Set the current year
-
-        double discountPercentage = 0.0; // Initialize discount percentage
-
-        // Determine discount percentage based on last purchase year and customer class
-        if (lastPurchaseYear == currentYear) {
-            discountPercentage = (customerClass == 1) ? DISCOUNT_30_PERCENTAGE :
-                    (customerClass == 2) ? DISCOUNT_15_PERCENTAGE :
-                            (customerClass == 3) ? DISCOUNT_3_PERCENTAGE : 0.0;
-        } else if (lastPurchaseYear >= currentYear - 5) {
-            discountPercentage = (customerClass == 1) ? DISCOUNT_20_PERCENTAGE :
-                    (customerClass == 2) ? DISCOUNT_13_PERCENTAGE : 0.0;
-        } else {
-            discountPercentage = (customerClass == 1) ? DISCOUNT_10_PERCENTAGE :
-                    (customerClass == 2) ? DISCOUNT_5_PERCENTAGE : 0.0;
+    private <T> boolean validateField(T value, java.util.function.Predicate<T> validator, String errorMessage) {
+        if (!validator.test(value)) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, errorMessage);
+            return false;
         }
+        return true;
+    }
 
-        // Calculate and return the discounted total purchase value
-        return customer.getTotalPurchase() * (1 - discountPercentage);
+    // Method to calculate the discounted value based on customer class and last purchase year
+    private double calculateDiscount(Customer customer) {
+        int classIndex = customer.getCustomerClass() - 1;
+        int lastPurchaseYear = customer.getLastPurchase();
+        int currentYear = 2024;
+
+        if (lastPurchaseYear == currentYear) {
+            return customer.getTotalPurchase() * (1 - DISCOUNTS[classIndex][0]);
+        } else if (lastPurchaseYear >= currentYear - 5) {
+            return customer.getTotalPurchase() * (1 - DISCOUNTS[classIndex][1]);
+        } else {
+            return customer.getTotalPurchase() * (1 - DISCOUNTS[classIndex][2]);
+        }
     }
 
     // Method to validate the full name of a customer
     private boolean isValidName(String fullName) {
-        String[] nameParts = fullName.split(" "); // Split the full name into parts
-        // Check if the name has exactly two parts (first name and second name)
-        if (nameParts.length != 2) {
-            return false; // Invalid name format
-        }
-        String firstName = nameParts[0];
-        String secondName = nameParts[1];
-        // Validate first name, second name, and full name format
-        return firstName.matches(NAME_VALIDATION) &&
-                secondName.matches(SECOND_NAME_VALIDATION) &&
+        String[] nameParts = fullName.split(" ");
+        return nameParts.length == 2 && nameParts[0].matches(NAME_VALIDATION) &&
+                nameParts[1].matches(SECOND_NAME_VALIDATION) &&
                 fullName.matches(FULL_NAME_VALIDATION);
     }
 
     // Method to validate the customer class value
     private boolean validateCustomerClass(int customerClass) {
-        // Check if the customer class is within the valid range
         return customerClass >= MIN_CUSTOMER_CLASS && customerClass <= MAX_CUSTOMER_CLASS;
     }
 
-    // Method to validate the last purchase year
+    // Validate the last purchase year
     private boolean validateLastPurchaseYear(int year) {
-        // Check if the last purchase year is within the valid range
         return year >= MIN_PURCHASE_YEAR && year <= MAX_CUSTOMER_YEAR;
     }
 
-    // Method to validate the total purchase amount
+    // Validate the total purchase amount
     private boolean validateTotalPurchase(double totalPurchase) {
-        // Ensure total purchase is non-negative
         return totalPurchase >= 0;
     }
 }

@@ -53,7 +53,7 @@ public class Main {
             generateOutputFile(processedCustomers, outputJsonFilePath, writerFactory, logger);
 
         } catch (IOException e) {
-            logger.log(Main.class.getSimpleName(), "ERROR", "Error processing customer data: " + e.getMessage());
+            logger.log(Main.class.getSimpleName(), Logger.LogLevel.ERROR, "Error processing customer data: " + e.getMessage());
         }
     }
 
@@ -73,9 +73,9 @@ public class Main {
             // Get the appropriate writer based on the output file type
             CustomerWriter customerWriter = writerFactory.getWriter(outputFilePath);
             customerWriter.writeCustomers(processedCustomers, outputFilePath);
-            logger.log(Main.class.getSimpleName(), "INFO", "Processed customers written to: " + outputFilePath);
+            logger.log(Main.class.getSimpleName(), Logger.LogLevel.INFO, "Processed customers written to: " + outputFilePath);
         } catch (IOException e) {
-            logger.log(Main.class.getSimpleName(), "ERROR", "Error writing customer data: " + e.getMessage());
+            logger.log(Main.class.getSimpleName(), Logger.LogLevel.ERROR, "Error writing customer data: " + e.getMessage());
         }
     }
 }

@@ -1,6 +1,8 @@
 package org.CCT.FileHandlerTxt;
+
 import org.CCT.Entity.Customer;
 import org.CCT.FileHandlerInterface.CustomerWriter;
+import org.CCT.Loggers.Logger;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,6 +10,12 @@ import java.io.IOException;
 import java.util.List;
 
 public class CustomerWriterTxt implements CustomerWriter {
+
+    private final Logger logger;
+
+    public CustomerWriterTxt(Logger logger) {
+        this.logger = logger;
+    }
 
     // Method to write a list of Customer objects to a specified file
     @Override
@@ -21,6 +29,10 @@ public class CustomerWriterTxt implements CustomerWriter {
                 // Write a newline after each customer's data
                 writer.newLine();
             }
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Successfully wrote " + customers.size() + " customers to file: " + filePath);
+        } catch (IOException e) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Error writing to file: " + filePath + " - " + e.getMessage());
+            throw e;  // rethrow the exception after logging it
         }
     }
 

@@ -1,0 +1,12 @@
+2024-10-12T20:29:54.564656700 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:29:54.564656700 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:34:27.317068900 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:34:27.317068900 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:43:18.125551800 [ERROR] [CustomerProcessor.method name: validateField]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:43:18.126551300 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:48:22.520325200 [ERROR] [CustomerProcessor.method name: validateField]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:48:22.520325200 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:50:31.279142800 [ERROR] [CustomerProcessor.method name: validateField]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:50:31.280144500 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:51:23.489746800 [ERROR] [CustomerProcessor.method name: validateField]: Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T20:51:23.489746800 [ERROR] [CustomerProcessor.method name: isValidCustomer]: Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)

@@ -5,14 +5,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
+import java.util.EnumMap;
+import java.util.Map;
 
 public class Logger {
     // Initiate log folder
     private static final String LOG_FOLDER = "logs";
 
-    // initiate Logger instance which has createLogFolder method
+    // Map to track log file names for each log level
+    private final Map<LogLevel, String> logFileMap;
+
+    // Initiate Logger instance which has createLogFolder method
     public Logger() {
         createLogFolder();
+        logFileMap = initializeLogFileMap();
+    }
+
+    public enum LogLevel {
+        INFO, ERROR, DEBUG, WARN
     }
 
     // Create a directory for log files
@@ -27,26 +37,36 @@ public class Logger {
         }
     }
 
+    // Initialize file names for each log level
+    private Map<LogLevel, String> initializeLogFileMap() {
+        Map<LogLevel, String> map = new EnumMap<>(LogLevel.class);
+        map.put(LogLevel.INFO, "info.log");
+        map.put(LogLevel.ERROR, "error.log");
+        map.put(LogLevel.DEBUG, "debug.log");
+        map.put(LogLevel.WARN, "warn.log");
+        return map;
+    }
+
     // Log messages based on the class name
-    public void log(String className, String level, String message) {
-        // Get the current method name dynamically
+    public synchronized void log(String className, LogLevel level, String message) {
         String methodName = "method name: " + Thread.currentThread().getStackTrace()[2].getMethodName();
+        String formattedMessage = formatLogMessage(className, level, methodName, message);
 
-        // Determine the log file based on the log level automatically
-        String logFileName;
-        if (level.equalsIgnoreCase("ERROR")) {
-            logFileName = className + "_error.log";
-        } else {
-            logFileName = className + "_info.log"; // For non-error messages, use info by default
-        }
-
-        // Try writing to the appropriate log file
-        try (PrintWriter writer = new PrintWriter(new FileWriter(new File(LOG_FOLDER, logFileName), true))) {
-            String logMessage = String.format("%s [%s]: %s %s", LocalDateTime.now(), methodName, level, message);
-            writer.println(logMessage);
-            writer.flush();
+        // Write log to file
+        try (PrintWriter writer = new PrintWriter(new FileWriter(new File(LOG_FOLDER, logFileMap.get(level)), true))) {
+            writer.println(formattedMessage);
         } catch (IOException e) {
-            System.err.println("Failed to write log: " + e.getMessage());
+            logToConsole(level, "Failed to write log: " + e.getMessage()); // Pass the original level
         }
+    }
+
+    // Format the log message
+    private String formatLogMessage(String className, LogLevel level, String methodName, String message) {
+        return String.format("%s [%s] [%s.%s]: %s", LocalDateTime.now(), level, className, methodName, message);
+    }
+
+    // Fallback logging to console (used when log writing fails)
+    private void logToConsole(LogLevel level, String message) {
+        System.err.printf("%s [%s]: %s%n", LocalDateTime.now(), level, message);
     }
 }

@@ -1,0 +1,114 @@
+2024-10-12T20:29:54.552655300 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:29:54.555655900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:29:54.555655900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:29:54.556655900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:29:54.556655900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:29:54.557655700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:29:54.557655700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:29:54.557655700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:29:54.559659100 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:29:54.565656500 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:29:54.565656500 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:29:54.586658800 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:29:54.587656800 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:29:54.592659400 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:29:54.594657500 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:29:54.594657500 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:29:54.736654600 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:29:54.773655200 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:29:54.774658900 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json
+2024-10-12T20:34:27.305068900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:34:27.308069200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:34:27.308069200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:34:27.309068600 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:34:27.309068600 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:34:27.309068600 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:34:27.310068400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:34:27.310068400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:34:27.311070500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:34:27.318069200 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:34:27.318069200 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:34:27.329069800 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:34:27.330071900 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:34:27.331071600 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:34:27.332069400 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:34:27.332069400 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:34:27.466068400 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:34:27.504068 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:34:27.504068 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json
+2024-10-12T20:43:18.110550700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:43:18.114551700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:43:18.114551700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:43:18.114551700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:43:18.114551700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:43:18.115551200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:43:18.115551200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:43:18.115551200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:43:18.117551900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:43:18.126551300 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:43:18.127551500 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:43:18.137552300 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:43:18.138551200 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:43:18.138551200 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:43:18.139550700 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:43:18.140553500 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:43:18.277552 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:43:18.312555100 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:43:18.313554200 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json
+2024-10-12T20:48:22.500325300 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:48:22.504325500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:48:22.505324400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:48:22.505324400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:48:22.506324500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:48:22.506324500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:48:22.506324500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:48:22.507324300 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:48:22.509325200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:48:22.521324500 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:48:22.522324700 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:48:22.537324500 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:48:22.537324500 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:48:22.538324600 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:48:22.540324700 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:48:22.540324700 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:48:22.695327500 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:48:22.728328200 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:48:22.729328100 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json
+2024-10-12T20:50:31.265144200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:50:31.268144400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:50:31.268144400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:50:31.268144400 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:50:31.269144 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:50:31.269144 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:50:31.269144 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:50:31.270142300 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:50:31.271142200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:50:31.280144500 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:50:31.281141900 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:50:31.291145800 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:50:31.292146800 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:50:31.293144700 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:50:31.293144700 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:50:31.294146900 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:50:31.434146800 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:50:31.470144100 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:50:31.471143700 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json
+2024-10-12T20:51:23.472748900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 1 processed: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:51:23.475748500 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 2 processed: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:51:23.476748700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 3 processed: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:51:23.476748700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 4 processed: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T20:51:23.476748700 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 5 processed: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T20:51:23.477748900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 6 processed: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T20:51:23.477748900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 7 processed: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:51:23.477748900 [INFO] [CustomerReaderTxt.method name: readCustomers]: Customer 8 processed: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T20:51:23.480748200 [INFO] [CustomerReaderTxt.method name: readCustomers]: Total customers read: 8
+2024-10-12T20:51:23.490747200 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in input file before processing: 8
+2024-10-12T20:51:23.490747200 [INFO] [CustomerProcessor.method name: processCustomers]: Customers in output file after processing: 7
+2024-10-12T20:51:23.502748100 [INFO] [CustomerWriterTxt.method name: writeCustomers]: Successfully wrote 7 customers to file: output/customerDiscount.txt
+2024-10-12T20:51:23.503747500 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.txt
+2024-10-12T20:51:23.504747700 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Writing 7 customers to file: output/customerDiscount.csv
+2024-10-12T20:51:23.505747500 [INFO] [CustomerWriterCSV.method name: writeCustomers]: Successfully wrote customers to file: output/customerDiscount.csv
+2024-10-12T20:51:23.505747500 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.csv
+2024-10-12T20:51:23.673748300 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Writing customers to JSON file: output/customerDiscount.json
+2024-10-12T20:51:23.715747500 [INFO] [CustomerWriterJSON.method name: writeCustomers]: Successfully wrote 7 customers to JSON file: output/customerDiscount.json
+2024-10-12T20:51:23.716747 [INFO] [Main.method name: generateOutputFile]: Processed customers written to: output/customerDiscount.json

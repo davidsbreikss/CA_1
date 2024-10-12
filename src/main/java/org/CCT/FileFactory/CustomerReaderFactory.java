@@ -1,5 +1,6 @@
 package org.CCT.FileFactory;
 
+import org.CCT.EnumFiles.FileType;
 import org.CCT.FileHandlerCSV.CustomerReaderCSV;
 import org.CCT.FileHandlerInterface.CustomerReader;
 import org.CCT.FileHandlerJSON.CustomerReaderJSON;
@@ -15,20 +16,20 @@ public class CustomerReaderFactory {
 
     // Method to get the appropriate CustomerReader based on file extension
     public CustomerReader getReader(String filePath) {
-        String fileExtension = getFileExtension(filePath);
-        return switch (fileExtension.toLowerCase()) {
-            case "txt" -> new CustomerReaderTxt(logger);
-            case "csv" -> new CustomerReaderCSV(logger);
-            case "json" -> new CustomerReaderJSON(logger);
-            default -> throw new IllegalArgumentException("Unsupported file type: " + fileExtension);
+        FileType fileType = FileType.fromExtension(getFileExtension(filePath));
+        return switch (fileType) {
+            case TXT -> new CustomerReaderTxt(logger);
+            case CSV -> new CustomerReaderCSV(logger);
+            case JSON -> new CustomerReaderJSON(logger);
         };
     }
 
     // Helper method to extract the file extension
     private String getFileExtension(String filePath) {
         int lastIndexOfDot = filePath.lastIndexOf('.');
-        if (lastIndexOfDot == -1) {
-            return ""; // No extension
+        if (lastIndexOfDot == -1 || lastIndexOfDot == filePath.length() - 1) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "No valid file extension found for file: " + filePath);
+            throw new IllegalArgumentException("File must have a valid extension: " + filePath);
         }
         return filePath.substring(lastIndexOfDot + 1);
     }
