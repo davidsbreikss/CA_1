@@ -1,0 +1,8 @@
+2024-10-12T17:16:10.237406 [method name: main]: INFO Customers processed and written to: output/customerDiscount.txt
+2024-10-12T17:37:53.524633200 [method name: generateOutputFile]: INFO Processed customers written to: customerDiscount.txt
+2024-10-12T17:38:09.384389 [method name: generateOutputFile]: INFO Processed customers written to: customerDiscount.txt
+2024-10-12T17:40:57.762202200 [method name: generateOutputFile]: INFO Processed customers written to: output/customerDiscount.txt
+2024-10-12T17:41:06.734156100 [method name: generateOutputFile]: INFO Processed customers written to: output/customerDiscount.txt
+2024-10-12T18:20:02.538903500 [method name: generateOutputFile]: INFO Processed customers written to: output/customerDiscount.txt
+2024-10-12T18:20:02.539902900 [method name: generateOutputFile]: INFO Processed customers written to: output/customerDiscount.csv
+2024-10-12T18:20:02.708902100 [method name: generateOutputFile]: INFO Processed customers written to: output/customerDiscount.json

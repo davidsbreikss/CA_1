@@ -1,13 +1,14 @@
 package org.CCT;
 
 import org.CCT.Entity.Customer;
-import org.CCT.FileHandler.CustomerReader;
-import org.CCT.FileHandler.CustomerWriter;
+import org.CCT.FileFactory.CustomerReaderFactory;
+import org.CCT.FileFactory.CustomerWriterFactory;
+import org.CCT.FileHandlerInterface.CustomerReader;
+import org.CCT.FileHandlerInterface.CustomerWriter;
 import org.CCT.Loggers.Logger;
 import org.CCT.Processor.CustomerProcessor;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,60 +16,66 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String inputFilePath = getFilePathFromResources("customers.txt");
-        String outputFilePath = "output/customerDiscount.txt"; // Set output path relative to project root
+
+        String inputFilePath = "customers.txt";
+        String outputDirectory = "output";
 
         Logger logger = new Logger();
-
-        // Ensure both paths are valid
-        if (inputFilePath == null) {
-            System.err.println("Could not load file paths from resources.");
-            logger.log(Main.class.getSimpleName(), "Error", "Could not load file paths from resources.");
-            return;
-        }
-
-        // Create instances of the CustomerReader, CustomerProcessor, and CustomerWriter
-        CustomerReader customerReader = new CustomerReader();
-        CustomerProcessor customerProcessor = new CustomerProcessor();
-        CustomerWriter customerWriter = new CustomerWriter();
+        CustomerReaderFactory readerFactory = new CustomerReaderFactory(logger);
+        CustomerWriterFactory writerFactory = new CustomerWriterFactory(logger);
+        CustomerProcessor customerProcessor = new CustomerProcessor(logger);
 
         try {
-            // Step 1: Read customers from the input file
+            // Ensure the output directory exists
+            Path outputPath = Paths.get(outputDirectory);
+            Files.createDirectories(outputPath); // Create the output directory if it doesn't exist
+
+            // Get the appropriate reader based on the file type
+            CustomerReader customerReader = readerFactory.getReader(inputFilePath);
             List<Customer> customers = customerReader.readCustomers(inputFilePath);
 
-            // Step 2: Process the customers (apply discounts)
+            // Process the customers
             List<Customer> processedCustomers = customerProcessor.processCustomers(customers);
 
-            // Step 3: Ensure the output directory exists
-            Path outputPath = Paths.get(outputFilePath);
-            Files.createDirectories(outputPath.getParent()); // Create the output directory if it doesn't exist
+            // Determine the output file paths for different formats
+            String outputTxtFilePath = getOutputFilePath(outputDirectory, "txt");
+            String outputCsvFilePath = getOutputFilePath(outputDirectory, "csv");
+            String outputJsonFilePath = getOutputFilePath(outputDirectory, "json");
 
-            // Step 4: Write the processed customers to the output file
-            customerWriter.writeCustomers(processedCustomers, outputFilePath);
+            // Ensure the output files exist
+            ensureOutputFileExists(outputTxtFilePath);
+            ensureOutputFileExists(outputCsvFilePath);
+            ensureOutputFileExists(outputJsonFilePath);
 
-            System.out.println("Customers processed and written to: " + outputFilePath);
-            logger.log(Main.class.getSimpleName(), "INFO", "Customers processed and written to: " + outputFilePath);
+            // Generate the output files based on the desired formats
+            generateOutputFile(processedCustomers, outputTxtFilePath, writerFactory, logger);
+            generateOutputFile(processedCustomers, outputCsvFilePath, writerFactory, logger);
+            generateOutputFile(processedCustomers, outputJsonFilePath, writerFactory, logger);
+
         } catch (IOException e) {
-            // Handle any exceptions that occur during file I/O
-            System.err.println("Error reading or writing customer data: " + e.getMessage());
-            logger.log(Main.class.getSimpleName(), "ERROR", "Error reading or writing customer data: " + e.getMessage());
+            logger.log(Main.class.getSimpleName(), "ERROR", "Error processing customer data: " + e.getMessage());
         }
     }
 
-    private static String getFilePathFromResources(String fileName) {
-        // Use the class loader to locate the resource
-        URL resource = Main.class.getClassLoader().getResource(fileName);
-        if (resource == null) {
-            System.err.println("File not found in resources: " + fileName);
-            return null;
-        }
+    private static String getOutputFilePath(String outputDirectory, String fileType) {
+        return outputDirectory + "/customerDiscount." + fileType; // Constructs the file path based on the type
+    }
 
+    private static void ensureOutputFileExists(String outputFilePath) throws IOException {
+        Path path = Paths.get(outputFilePath);
+        if (!Files.exists(path)) {
+            Files.createFile(path); // Creates the file if it doesn't exist
+        }
+    }
+    private static void generateOutputFile(List<Customer> processedCustomers, String outputFilePath,
+                                           CustomerWriterFactory writerFactory, Logger logger) {
         try {
-            // Convert URL to URI and then to a valid file path
-            return Paths.get(resource.toURI()).toString();
-        } catch (Exception e) {
-            System.err.println("Error converting file path: " + e.getMessage());
-            return null;
+            // Get the appropriate writer based on the output file type
+            CustomerWriter customerWriter = writerFactory.getWriter(outputFilePath);
+            customerWriter.writeCustomers(processedCustomers, outputFilePath);
+            logger.log(Main.class.getSimpleName(), "INFO", "Processed customers written to: " + outputFilePath);
+        } catch (IOException e) {
+            logger.log(Main.class.getSimpleName(), "ERROR", "Error writing customer data: " + e.getMessage());
         }
     }
 }

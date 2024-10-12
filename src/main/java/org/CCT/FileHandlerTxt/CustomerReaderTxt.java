@@ -1,6 +1,7 @@
-package org.CCT.FileHandler;
+package org.CCT.FileHandlerTxt;
 
 import org.CCT.Entity.Customer;
+import org.CCT.FileHandlerInterface.CustomerReader;
 import org.CCT.Loggers.Logger;
 
 import java.io.BufferedReader;
@@ -9,19 +10,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerReader {
+public class CustomerReaderTxt implements CustomerReader {
 
     private final Logger logger;
 
-    public CustomerReader(Logger logger) {
+    public CustomerReaderTxt(Logger logger) {
         this.logger = logger;
     }
 
-    public CustomerReader() {
+    public CustomerReaderTxt() {
         this.logger = new Logger();
     }
 
     // Method to read customer data from a file and return a list of Customer objects
+    @Override
     public List<Customer> readCustomers(String filePath) throws IOException {
         // List to hold the customer objects read from the file
         List<Customer> customers = new ArrayList<>();

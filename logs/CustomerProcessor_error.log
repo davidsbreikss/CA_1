@@ -1,0 +1,12 @@
+2024-10-12T17:32:05.500916300 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T17:32:05.501912500 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:37:53.512634700 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T17:37:53.513635300 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:38:09.372389100 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T17:38:09.372389100 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:40:57.748202200 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T17:40:57.749203100 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:41:06.722157500 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T17:41:06.722157500 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T18:20:02.522904500 [method name: isValidCustomer]: ERROR Invalid customer class for customer: Daragh Nolan. Class: 0
+2024-10-12T18:20:02.523902 [method name: isValidCustomer]: ERROR Customer data is invalid: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)

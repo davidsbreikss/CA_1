@@ -1,0 +1,246 @@
+2024-10-12T17:32:05.466914300 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T17:32:05.470916 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T17:32:05.470916 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:32:05.471912900 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:32:05.484911800 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:32:05.484911800 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T17:32:05.485913400 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T17:32:05.485913400 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:32:05.485913400 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:32:05.485913400 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:32:05.486914900 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T17:32:05.486914900 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T17:32:05.486914900 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:32:05.486914900 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:32:05.487915300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:32:05.487915300 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T17:32:05.487915300 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T17:32:05.487915300 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:32:05.488914400 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:32:05.488914400 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:32:05.488914400 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T17:32:05.489912800 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T17:32:05.489912800 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:32:05.489912800 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T17:32:05.490912300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T17:32:05.490912300 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T17:32:05.490912300 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T17:32:05.490912300 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:32:05.491913 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:32:05.491913 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:32:05.491913 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T17:32:05.491913 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T17:32:05.492913300 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T17:32:05.492913300 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:32:05.492913300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:32:05.492913300 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T17:32:05.493915 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T17:32:05.493915 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:32:05.493915 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:32:05.493915 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:32:05.495913900 [method name: readCustomers]: INFO Total customers: 8
+2024-10-12T17:37:53.479635700 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T17:37:53.482637100 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T17:37:53.482637100 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:37:53.483634800 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:37:53.496636300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:37:53.497634400 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T17:37:53.497634400 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T17:37:53.497634400 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:37:53.497634400 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:37:53.498635500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:37:53.498635500 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T17:37:53.498635500 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T17:37:53.498635500 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:37:53.499635500 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:37:53.499635500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:37:53.499635500 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T17:37:53.500634 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T17:37:53.500634 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:37:53.500634 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:37:53.500634 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:37:53.501635800 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T17:37:53.501635800 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T17:37:53.501635800 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:37:53.501635800 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T17:37:53.502634100 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T17:37:53.502634100 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T17:37:53.502634100 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T17:37:53.502634100 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:37:53.503636 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:37:53.503636 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:37:53.503636 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T17:37:53.503636 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T17:37:53.503636 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T17:37:53.504634100 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:37:53.504634100 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:37:53.504634100 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T17:37:53.504634100 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T17:37:53.505634500 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:37:53.505634500 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:37:53.505634500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:37:53.507634800 [method name: readCustomers]: INFO Total customers: 8
+2024-10-12T17:38:09.338386600 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T17:38:09.342386600 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T17:38:09.342386600 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:38:09.342386600 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:38:09.355385200 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:38:09.356389300 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T17:38:09.356389300 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T17:38:09.356389300 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:38:09.357387600 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:38:09.357387600 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:38:09.357387600 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T17:38:09.358388 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T17:38:09.358388 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:38:09.358388 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:38:09.358388 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:38:09.359386200 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T17:38:09.359386200 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T17:38:09.359386200 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:38:09.359386200 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:38:09.360389100 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:38:09.360389100 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T17:38:09.360389100 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T17:38:09.360389100 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:38:09.361388200 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T17:38:09.361388200 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T17:38:09.361388200 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T17:38:09.362387300 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T17:38:09.362387300 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:38:09.362387300 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:38:09.362387300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:38:09.363387700 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T17:38:09.363387700 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T17:38:09.363387700 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T17:38:09.364387500 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:38:09.364387500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:38:09.364387500 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T17:38:09.364387500 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T17:38:09.365387300 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:38:09.365387300 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:38:09.365387300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:38:09.367389400 [method name: readCustomers]: INFO Total customers: 8
+2024-10-12T17:40:57.715202500 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T17:40:57.718205400 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T17:40:57.718205400 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:40:57.719205600 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:40:57.732202200 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:40:57.733202200 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T17:40:57.733202200 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T17:40:57.733202200 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:40:57.734201100 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:40:57.734201100 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:40:57.734201100 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T17:40:57.734201100 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T17:40:57.735202900 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:40:57.735202900 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:40:57.735202900 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:40:57.735202900 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T17:40:57.736202700 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T17:40:57.736202700 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:40:57.736202700 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:40:57.737201200 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:40:57.737201200 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T17:40:57.737201200 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T17:40:57.737201200 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:40:57.738201300 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T17:40:57.738201300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T17:40:57.738201300 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T17:40:57.738201300 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T17:40:57.739201400 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:40:57.739201400 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:40:57.739201400 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:40:57.739201400 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T17:40:57.740200700 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T17:40:57.740200700 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T17:40:57.740200700 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:40:57.741202 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:40:57.741202 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T17:40:57.741202 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T17:40:57.741202 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:40:57.742201500 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:40:57.742201500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:40:57.744202900 [method name: readCustomers]: INFO Total customers: 8
+2024-10-12T17:41:06.682157100 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T17:41:06.685155600 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T17:41:06.686156800 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:41:06.686156800 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:41:06.703156200 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:41:06.704156800 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T17:41:06.704156800 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T17:41:06.705157800 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:41:06.705157800 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:41:06.705157800 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:41:06.706157500 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T17:41:06.706157500 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T17:41:06.706157500 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:41:06.707158600 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:41:06.707158600 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:41:06.707158600 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T17:41:06.708156 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T17:41:06.708156 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:41:06.708156 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T17:41:06.709155900 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T17:41:06.709155900 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T17:41:06.709155900 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T17:41:06.709155900 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T17:41:06.710158400 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T17:41:06.710158400 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T17:41:06.711157600 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T17:41:06.711157600 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T17:41:06.711157600 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T17:41:06.712157600 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T17:41:06.712157600 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T17:41:06.712157600 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T17:41:06.713157100 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T17:41:06.713157100 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T17:41:06.713157100 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:41:06.714157500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:41:06.714157500 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T17:41:06.714157500 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T17:41:06.714157500 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T17:41:06.715157100 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T17:41:06.715157100 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T17:41:06.717155500 [method name: readCustomers]: INFO Total customers: 8
+2024-10-12T18:20:02.490900600 [method name: readCustomers]: INFO Read line: Sam Weiss
+2024-10-12T18:20:02.494900200 [method name: readCustomers]: INFO Read line: 523.00
+2024-10-12T18:20:02.494900200 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T18:20:02.494900200 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T18:20:02.507901600 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Sam Weiss, totalPurchase=523.0, customerClass=2, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T18:20:02.507901600 [method name: readCustomers]: INFO Read line: Cristiani Eccher
+2024-10-12T18:20:02.507901600 [method name: readCustomers]: INFO Read line: 1523.00
+2024-10-12T18:20:02.508900300 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T18:20:02.508900300 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T18:20:02.508900300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Cristiani Eccher, totalPurchase=1523.0, customerClass=3, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T18:20:02.508900300 [method name: readCustomers]: INFO Read line: Declan Walsh
+2024-10-12T18:20:02.509901200 [method name: readCustomers]: INFO Read line: 271.00
+2024-10-12T18:20:02.509901200 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T18:20:02.509901200 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T18:20:02.510899600 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Declan Walsh, totalPurchase=271.0, customerClass=1, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T18:20:02.510899600 [method name: readCustomers]: INFO Read line: Barry Smart
+2024-10-12T18:20:02.510899600 [method name: readCustomers]: INFO Read line: 3475.00
+2024-10-12T18:20:02.510899600 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T18:20:02.511901300 [method name: readCustomers]: INFO Read line: 2023
+2024-10-12T18:20:02.511901300 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Barry Smart, totalPurchase=3475.0, customerClass=1, lastPurchase=2023, discountedValue=0.0)
+2024-10-12T18:20:02.511901300 [method name: readCustomers]: INFO Read line: Katie White
+2024-10-12T18:20:02.511901300 [method name: readCustomers]: INFO Read line: 78.00
+2024-10-12T18:20:02.512901 [method name: readCustomers]: INFO Read line: 3
+2024-10-12T18:20:02.512901 [method name: readCustomers]: INFO Read line: 2022
+2024-10-12T18:20:02.512901 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Katie White, totalPurchase=78.0, customerClass=3, lastPurchase=2022, discountedValue=0.0)
+2024-10-12T18:20:02.512901 [method name: readCustomers]: INFO Read line: Peter Nolan
+2024-10-12T18:20:02.513902 [method name: readCustomers]: INFO Read line: 188.00
+2024-10-12T18:20:02.513902 [method name: readCustomers]: INFO Read line: 2
+2024-10-12T18:20:02.513902 [method name: readCustomers]: INFO Read line: 2024
+2024-10-12T18:20:02.514901 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Peter Nolan, totalPurchase=188.0, customerClass=2, lastPurchase=2024, discountedValue=0.0)
+2024-10-12T18:20:02.514901 [method name: readCustomers]: INFO Read line: Daragh Nolan
+2024-10-12T18:20:02.514901 [method name: readCustomers]: INFO Read line: 31.00
+2024-10-12T18:20:02.514901 [method name: readCustomers]: INFO Read line: 0
+2024-10-12T18:20:02.515901500 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T18:20:02.515901500 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Daragh Nolan, totalPurchase=31.0, customerClass=0, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T18:20:02.515901500 [method name: readCustomers]: INFO Read line: Patrick Moss
+2024-10-12T18:20:02.515901500 [method name: readCustomers]: INFO Read line: 88.00
+2024-10-12T18:20:02.516901400 [method name: readCustomers]: INFO Read line: 1
+2024-10-12T18:20:02.516901400 [method name: readCustomers]: INFO Read line: 2018
+2024-10-12T18:20:02.516901400 [method name: readCustomers]: INFO Customer has been read: Customer(fullName=Patrick Moss, totalPurchase=88.0, customerClass=1, lastPurchase=2018, discountedValue=0.0)
+2024-10-12T18:20:02.518904700 [method name: readCustomers]: INFO Total customers: 8

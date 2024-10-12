@@ -1,14 +1,16 @@
-package org.CCT.FileHandler;
+package org.CCT.FileHandlerTxt;
 import org.CCT.Entity.Customer;
+import org.CCT.FileHandlerInterface.CustomerWriter;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class CustomerWriter {
+public class CustomerWriterTxt implements CustomerWriter {
 
     // Method to write a list of Customer objects to a specified file
+    @Override
     public void writeCustomers(List<Customer> customers, String filePath) throws IOException {
         // Use BufferedWriter to write to the file efficiently
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
