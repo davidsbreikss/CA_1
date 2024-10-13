@@ -16,12 +16,18 @@ public class CustomerReaderFactory {
 
     // Method to get the appropriate CustomerReader based on file extension
     public CustomerReader getReader(String filePath) {
-        FileType fileType = FileType.fromExtension(getFileExtension(filePath));
-        return switch (fileType) {
-            case TXT -> new CustomerReaderTxt(logger);
-            case CSV -> new CustomerReaderCSV(logger);
-            case JSON -> new CustomerReaderJSON(logger);
-        };
+        String extension = getFileExtension(filePath);
+        try {
+            FileType fileType = FileType.fromExtension(extension);
+            return switch (fileType) {
+                case TXT -> new CustomerReaderTxt(logger);
+                case CSV -> new CustomerReaderCSV(logger);
+                case JSON -> new CustomerReaderJSON(logger);
+            };
+        } catch (IllegalArgumentException e) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Unsupported file: " + e.getMessage());
+            throw new IllegalArgumentException("File must have a valid extension (txt, json or csv)");
+        }
     }
 
     // Helper method to extract the file extension
@@ -29,7 +35,7 @@ public class CustomerReaderFactory {
         int lastIndexOfDot = filePath.lastIndexOf('.');
         if (lastIndexOfDot == -1 || lastIndexOfDot == filePath.length() - 1) {
             logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "No valid file extension found for file: " + filePath);
-            throw new IllegalArgumentException("File must have a valid extension: " + filePath);
+            throw new IllegalArgumentException("File must have a valid extension (txt, json or csv)");
         }
         return filePath.substring(lastIndexOfDot + 1);
     }

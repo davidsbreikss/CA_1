@@ -16,12 +16,18 @@ public class CustomerWriterFactory {
 
     // Method to get the appropriate CustomerWriter based on file extension
     public CustomerWriter getWriter(String filePath) {
-        FileType fileType = FileType.fromExtension(getFileExtension(filePath));
-        return switch (fileType) {
-            case TXT -> new CustomerWriterTxt(logger);
-            case CSV -> new CustomerWriterCSV(logger);
-            case JSON -> new CustomerWriterJSON(logger);
-        };
+        String extension = getFileExtension(filePath);
+        try {
+            FileType fileType = FileType.fromExtension(extension);
+            return switch (fileType) {
+                case TXT -> new CustomerWriterTxt(logger);
+                case CSV -> new CustomerWriterCSV(logger);
+                case JSON -> new CustomerWriterJSON(logger);
+            };
+        } catch (IllegalArgumentException e) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Unsupported file: " + e.getMessage());
+            throw new IllegalArgumentException("File must have a valid extension (txt, json or csv)");
+        }
     }
 
     // Helper method to extract the file extension
@@ -29,7 +35,7 @@ public class CustomerWriterFactory {
         int lastIndexOfDot = filePath.lastIndexOf('.');
         if (lastIndexOfDot == -1 || lastIndexOfDot == filePath.length() - 1) {
             logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "No valid file extension found for file: " + filePath);
-            throw new IllegalArgumentException("Writing File must have a valid extension: " + filePath);
+            throw new IllegalArgumentException("File must have a valid extension (txt, json or csv)");
         }
         return filePath.substring(lastIndexOfDot + 1);
     }
