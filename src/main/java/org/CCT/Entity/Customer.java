@@ -1,5 +1,8 @@
 package org.CCT.Entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -10,10 +13,15 @@ import lombok.ToString;
 public class Customer {
 
     // Fields for customers information
+    @JsonProperty("fullName")
     private final String fullName;
+    @JsonIgnore
     private final double totalPurchase;
+    @JsonIgnore
     private final int customerClass;
+    @JsonIgnore
     private final int lastPurchase;
+    @JsonProperty("discountedValue")
     private final double discountedValue;
 
     // Constructor that initializes the Customer without a discounted value, defaulting to 0.0.
@@ -22,9 +30,12 @@ public class Customer {
         this(fullName, totalPurchase, customerClass, lastPurchase, 0.0);
     }
 
-    // Overloaded constructor that allows setting the discounted value.
-    public Customer(String fullName, double totalPurchase, int customerClass, int lastPurchase, double discountedValue) {
-        // Assigns the parameter values to the corresponding fields.
+    @JsonCreator
+    public Customer(@JsonProperty("fullName") String fullName,
+                    @JsonProperty("totalPurchase") double totalPurchase,
+                    @JsonProperty("customerClass") int customerClass,
+                    @JsonProperty("lastPurchase") int lastPurchase,
+                    @JsonProperty("discountedValue") double discountedValue) {
         this.fullName = fullName;
         this.totalPurchase = totalPurchase;
         this.customerClass = customerClass;

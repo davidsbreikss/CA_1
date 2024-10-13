@@ -9,6 +9,7 @@ import org.CCT.FileHandlerInterface.CustomerReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class CustomerReaderJSON implements CustomerReader {
 
@@ -23,8 +24,9 @@ public class CustomerReaderJSON implements CustomerReader {
     @Override
     public List<Customer> readCustomers(String filePath) throws IOException {
         logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Reading customers from JSON file: " + filePath);
-        File file = new File(filePath);  // Create the File object once
+        File file;  // Create the File object once
         try {
+            file = new File(Objects.requireNonNull(getClass().getClassLoader().getResource(filePath)).getFile());
             if (!file.exists() || !file.canRead()) {
                 logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "File not found or not readable: " + filePath);
                 throw new IOException("File not found or not readable: " + filePath);

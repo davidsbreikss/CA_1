@@ -22,11 +22,7 @@ public class CustomerWriterCSV implements CustomerWriter {
         logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Writing " + customers.size() + " customers to file: " + filePath);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Customer customer : customers) {
-                writer.write(String.format("%s,%.2f,%d,%d",
-                        customer.getFullName(),
-                        customer.getTotalPurchase(),
-                        customer.getCustomerClass(),
-                        customer.getLastPurchase()));
+                writer.write(formatCustomer(customer));
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -34,5 +30,13 @@ public class CustomerWriterCSV implements CustomerWriter {
             throw e;
         }
         logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Successfully wrote customers to file: " + filePath);
+    }
+
+    private String formatCustomer(Customer customer) {
+        // Create a formatted string with the customer's full name and discounted value
+        // The discounted value is formatted to two decimal places
+        return String.format("%s,%.2f",
+                customer.getFullName(),         // Full name of the customer
+                customer.getDiscountedValue()); // Discounted value of the customer
     }
 }

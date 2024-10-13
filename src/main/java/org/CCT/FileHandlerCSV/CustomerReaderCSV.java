@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CustomerReaderCSV implements CustomerReader {
 
@@ -24,7 +25,7 @@ public class CustomerReaderCSV implements CustomerReader {
     public List<Customer> readCustomers(String filePath) throws IOException {
         List<Customer> customers = new ArrayList<>();
         logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Reading customers from file: " + filePath);
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(Objects.requireNonNull(getClass().getClassLoader().getResource(filePath)).getFile()))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");

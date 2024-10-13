@@ -17,7 +17,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        String inputFilePath = "customers.txt";
+        String inputFilePath = "customers.csv";
         String outputDirectory = "output";
 
         Logger logger = new Logger();
