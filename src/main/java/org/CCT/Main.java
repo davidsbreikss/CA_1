@@ -1,6 +1,8 @@
 package org.CCT;
 
 import org.CCT.Entity.Customer;
+import org.CCT.Exceptions.CustomerDataException;
+import org.CCT.Exceptions.EmptyFileException;
 import org.CCT.FileFactory.CustomerReaderFactory;
 import org.CCT.FileFactory.CustomerWriterFactory;
 import org.CCT.FileHandlerInterface.CustomerReader;
@@ -17,7 +19,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        String inputFilePath = "customers.csv";
+        String inputFilePath = "src/main/resources/customers.csv";
         String outputDirectory = "output";
 
         Logger logger = new Logger();
@@ -54,6 +56,10 @@ public class Main {
 
         } catch (IOException e) {
             logger.log(Main.class.getSimpleName(), Logger.LogLevel.ERROR, "Error processing customer data: " + e.getMessage());
+        } catch (CustomerDataException e) {
+            throw new RuntimeException(e);
+        } catch (EmptyFileException e) {
+            throw new RuntimeException(e);
         }
     }
 

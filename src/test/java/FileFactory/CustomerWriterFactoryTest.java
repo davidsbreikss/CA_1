@@ -1,11 +1,7 @@
 package FileFactory;
 
 import org.CCT.FileFactory.CustomerWriterFactory;
-import org.CCT.FileHandlerCSV.CustomerReaderCSV;
-import org.CCT.FileHandlerInterface.CustomerReader;
 import org.CCT.FileHandlerInterface.CustomerWriter;
-import org.CCT.FileHandlerJSON.CustomerReaderJSON;
-import org.CCT.FileHandlerTxt.CustomerReaderTxt;
 import org.CCT.Loggers.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

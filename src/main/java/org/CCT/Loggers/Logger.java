@@ -19,6 +19,9 @@ public class Logger {
     public Logger() {
         createLogFolder();
         logFileMap = initializeLogFileMap();
+        if (logFileMap.isEmpty()) {
+            throw new IllegalStateException("logFileMap failed to initialize");
+        }
     }
 
     public enum LogLevel {
@@ -33,6 +36,7 @@ public class Logger {
                 System.out.println("Log folder created.");
             } else {
                 System.err.println("Failed to create log folder.");
+                throw new IllegalStateException("Could not create log folder.");
             }
         }
     }
@@ -44,6 +48,8 @@ public class Logger {
         map.put(LogLevel.ERROR, "error.log");
         map.put(LogLevel.DEBUG, "debug.log");
         map.put(LogLevel.WARN, "warn.log");
+
+        System.out.println("logFileMap initialized with: " + map);
         return map;
     }
 
