@@ -1,0 +1,20 @@
+[
+  {
+    "fullName": "John Doe",
+    "totalPurchase": "twenty",
+    "customerClass": 2,
+    "lastPurchase": 2023
+  },
+  {
+    "fullName": "Kevin Mall"
+    "totalPurchase": 30.00,
+    "customerClass": 3,
+    "lastPurchase": 2024
+  },
+  {
+    "fullName": "Owen Will",
+    "totalPurchase": 40.00,
+    "customerClass": 1
+    "lastPurchase": 2024
+  }
+]

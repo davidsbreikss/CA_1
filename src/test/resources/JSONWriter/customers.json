@@ -1,0 +1,13 @@
+[ {
+  "fullName" : "John Doe",
+  "totalPurchase" : 20.0,
+  "customerClass" : 2,
+  "lastPurchase" : 2023,
+  "discountedValue" : 0.0
+}, {
+  "fullName" : "Jane Smith",
+  "totalPurchase" : 25.0,
+  "customerClass" : 1,
+  "lastPurchase" : 2022,
+  "discountedValue" : 0.0
+} ]

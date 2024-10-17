@@ -1,10 +1,50 @@
 [
-  {"fullName":"Sam Weiss","totalPurchase":523.00,"customerClass":2,"lastPurchase":2023},
-  {"fullName":"Cristiani Eccher","totalPurchase":1523.00,"customerClass":3,"lastPurchase":2024},
-  {"fullName":"Declan Walsh","totalPurchase":271.00,"customerClass":1,"lastPurchase":2024},
-  {"fullName":"Barry Smart","totalPurchase":3475.00,"customerClass":1,"lastPurchase":2023},
-  {"fullName":"Katie White","totalPurchase":78.00,"customerClass":3,"lastPurchase":2022},
-  {"fullName":"Peter Nolan","totalPurchase":188.00,"customerClass":2,"lastPurchase":2024},
-  {"fullName":"Daragh Nolan","totalPurchase":31.00,"customerClass":0,"lastPurchase":2018},
-  {"fullName":"Patrick Moss","totalPurchase":88.00,"customerClass":1,"lastPurchase":2018}
+  {
+    "fullName": "Sam Weiss",
+    "totalPurchase": 523.00,
+    "customerClass": 2,
+    "lastPurchase": 2023
+  },
+  {
+    "fullName": "Cristiani Eccher",
+    "totalPurchase": 1523.00,
+    "customerClass": 3,
+    "lastPurchase": 2024
+  },
+  {
+    "fullName": "Declan Walsh",
+    "totalPurchase": 271.00,
+    "customerClass": 1,
+    "lastPurchase": 2024
+  },
+  {
+    "fullName": "Barry Smart",
+    "totalPurchase": 3475.00,
+    "customerClass": 1,
+    "lastPurchase": 2023
+  },
+  {
+    "fullName": "Katie White",
+    "totalPurchase": 78.00,
+    "customerClass": 3,
+    "lastPurchase": 2022
+  },
+  {
+    "fullName": "Peter Nolan",
+    "totalPurchase": 188.00,
+    "customerClass": 2,
+    "lastPurchase": 2024
+  },
+  {
+    "fullName": "Daragh Nolan",
+    "totalPurchase": 31.00,
+    "customerClass": 0,
+    "lastPurchase": 2018
+  },
+  {
+    "fullName": "Patrick Moss",
+    "totalPurchase": 88.00,
+    "customerClass": 1,
+    "lastPurchase": 2018
+  }
 ]

@@ -1,7 +1,6 @@
 package FileHandlerCSV;
 
 import org.CCT.Entity.Customer;
-import org.CCT.Exceptions.CustomerDataException;
 import org.CCT.Exceptions.EmptyFileException;
 import org.CCT.FileHandlerCSV.CustomerReaderCSV;
 import org.CCT.Loggers.Logger;
@@ -16,89 +15,90 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CustomerReaderCSVTest {
 
-    private Logger logger;
-    private CustomerReaderCSV reader;
+    private String filePath; // File path for the test CSV files
+
+    private Logger logger; // Logger instance for mocking
+    private CustomerReaderCSV reader; // Instance of the reader to be tested
 
     @BeforeEach
     public void setUp() {
-        logger = Mockito.mock(Logger.class);
-        reader = new CustomerReaderCSV(logger);
+        logger = Mockito.mock(Logger.class); // Create a mock logger
+        reader = new CustomerReaderCSV(logger); // Initialize the reader with the mock logger
     }
 
     @Test
-    void testReadCustomersSuccessfully() throws IOException, CustomerDataException, EmptyFileException {
-        String testFilePath = "src/test/resources/TestCustomers.csv";
+    void testReadCustomersSuccessfully() throws IOException, EmptyFileException {
+        // Specify the path to the test CSV file with valid customers
+        filePath = "src/test/resources/CSVReader/TestCustomers.csv";
 
-        // Read customers from the CSV file
-        List<Customer> customers = reader.readCustomers(testFilePath);
+        // Act: Read customers from the CSV file
+        List<Customer> customers = reader.readCustomers(filePath);
 
-        // Assertions to verify correct customer data
-        assertEquals(2, customers.size());
+        // Assert: Verify correct customer data
+        assertEquals(2, customers.size()); // Check the number of customers read
 
-        assertEquals("John Doe", customers.getFirst().getFullName());
-        assertEquals(100.0, customers.getFirst().getTotalPurchase());
+        // Verify details of the first customer
+        assertEquals("John Doe", customers.get(0).getFullName());
+        assertEquals(100.0, customers.get(0).getTotalPurchase());
         assertEquals(1, customers.get(0).getCustomerClass());
         assertEquals(2022, customers.get(0).getLastPurchase());
 
+        // Verify details of the second customer
         assertEquals("Jane Doe", customers.get(1).getFullName());
         assertEquals(200.0, customers.get(1).getTotalPurchase());
         assertEquals(2, customers.get(1).getCustomerClass());
         assertEquals(2023, customers.get(1).getLastPurchase());
-
     }
 
     @Test
-    void testReadCustomersWithInvalidDataFormat() throws IOException, CustomerDataException, EmptyFileException {
+    void testReadCustomersEmptyFile() {
+        // Specify the path to the test CSV file that is empty
+        filePath = "src/test/resources/CSVReader/TestEmptyCustomers.csv";
 
-        String testFilePath = "src/test/resources/TestInvalidDataCustomers.csv";
-
-        List<Customer> customers = reader.readCustomers(testFilePath);
-
-        assertEquals(1, customers.size());
-    }
-
-    @Test
-    void testReadCustomersWithMultipleInvalidDataFields() throws IOException, CustomerDataException, EmptyFileException {
-
-        String testFilePath = "src/test/resources/TestMultipleInvalidDataCustomers.csv";
-        // Mock Logger
-        Logger logger = Mockito.mock(Logger.class);
-
-        // Create instance of CustomerReaderCSV
-        CustomerReaderCSV reader = new CustomerReaderCSV(logger);
-
-        // Read customers from file
-        List<Customer> customers = reader.readCustomers(testFilePath);
-
-        // Verify that only valid customers were added (assuming 1 valid customer in the file)
-        assertEquals(1, customers.size());
-
-        // Verify that the logger caught multiple invalid data formats
-        Mockito.verify(logger, Mockito.times(1)).log(Mockito.anyString(), Mockito.eq(Logger.LogLevel.ERROR), Mockito.contains("Invalid data format in line"));
-    }
-
-    @Test
-    void testReadCustomersWithMissingDataFields() {
-        String testFilePath = "src/test/resources/TestMissingDataCustomers.csv";
-
-        // Read customers from file and expect a CustomerDataException
-        Exception exception = assertThrows(CustomerDataException.class, () -> {
-            reader.readCustomers(testFilePath);
-        });
-
-        // Verify the exception message contains details about invalid customer data
-        assertTrue(exception.getMessage().contains("Invalid customer data"));
-    }
-
-    @Test
-    void testReadCustomersWithEmptyFile() {
-        String testFilePath = "src/test/resources/TestEmptyCustomers.csv";
-
+        // Act and Assert: Ensure an EmptyFileException is thrown for an empty file
         Exception exception = assertThrows(EmptyFileException.class, () -> {
-            reader.readCustomers(testFilePath);
+            reader.readCustomers(filePath);
         });
-
-        // Verify that no customers were read
+        // Check the exception message
         assertTrue(exception.getMessage().contains("File is empty"));
+    }
+
+    @Test
+    void testReadCustomersWithMissingFields() throws EmptyFileException, IOException {
+        // Specify the path to the test CSV file with missing fields
+        filePath = "src/test/resources/CSVReader/TestMissingFieldCustomers.csv";
+
+        // Act: Read customers from the file
+        List<Customer> customers = reader.readCustomers(filePath);
+        // Assert: Verify that the method skips customers with missing fields
+        assertEquals(1, customers.size()); // Only valid customers should be present
+    }
+
+    @Test
+    void testReadCustomersWithInvalidNumberFormat() throws IOException, EmptyFileException {
+        // Specify the path to the test CSV file with invalid number formats
+        filePath = "src/test/resources/CSVReader/TestInvalidNumberCustomers.csv";
+
+        // Act: Read customers from the file
+        List<Customer> customers = reader.readCustomers(filePath);
+        // Assert: Verify that the method skips customers with invalid number formats
+        assertEquals(1, customers.size()); // Only valid customers should be present
+    }
+
+    @Test
+    void testCustomersWithEmptyFields() throws EmptyFileException, IOException {
+        // Specify the path to the test CSV file with empty fields
+        filePath = "src/test/resources/CSVReader/TestEmptyFields";
+
+        // Act: Read customers from the file
+        List<Customer> customers = reader.readCustomers(filePath);
+        // Assert: Verify that the method skips customers with empty fields
+        assertEquals(1, customers.size()); // Only valid customers should be present
+    }
+
+    @Test
+    void testReadCustomersNonExistentFile() {
+        // Execute & Verify: Ensure IOException is thrown for a non-existent file
+        assertThrows(IOException.class, () -> reader.readCustomers("non_existent_file.csv"));
     }
 }

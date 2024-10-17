@@ -11,28 +11,37 @@ import java.util.List;
 
 public class CustomerWriterTxt implements CustomerWriter {
 
-    private final Logger logger;
+    private final Logger logger; // Logger for logging information and errors
 
     public CustomerWriterTxt(Logger logger) {
-        this.logger = logger;
+        this.logger = logger; // Initialize logger
     }
 
     // Method to write a list of Customer objects to a specified file
     @Override
     public void writeCustomers(List<Customer> customers, String filePath) throws IOException {
+
+        // Check if the customer list is empty
+        if (customers.isEmpty()) {
+            logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Cannot write empty customer list to file: " + filePath);
+            throw new IOException("Cannot write empty customer list to file: " + filePath);
+        }
+
+        logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Writing " + customers.size() + " customers to file: " + filePath);
+
         // Use BufferedWriter to write to the file efficiently
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Iterate through each customer in the list
             for (Customer customer : customers) {
                 // Format the customer data into a string and write it to the file
-                writer.write(formatCustomer(customer));
-                // Write a newline after each customer's data
-                writer.newLine();
+                writer.write(formatCustomer(customer)); // Write the formatted customer data
+                writer.newLine(); // Write a newline after each customer's data
             }
             logger.log(this.getClass().getSimpleName(), Logger.LogLevel.INFO, "Successfully wrote " + customers.size() + " customers to file: " + filePath);
         } catch (IOException e) {
+            // Log error if writing fails and rethrow the exception
             logger.log(this.getClass().getSimpleName(), Logger.LogLevel.ERROR, "Error writing to file: " + filePath + " - " + e.getMessage());
-            throw e;  // rethrow the exception after logging it
+            throw e;  // Rethrow the exception after logging it
         }
     }
 
