@@ -20,7 +20,7 @@ e) Last purchase must be a valid year.
 2) If the data is not valid, you should output a useful error message on screen to the user. 
 3) If the data is valid, then you have to calculate the discount to the net value and save a file named 
 customerdiscount.txt, in the following format: 
-<Student number> - <Second Name> 
+<Name> - <Discount value> 
 <Final Value> 
 Where the <Final Value> is determined by the number of classes, as follows: 
 Criteria Final Value
@@ -32,12 +32,12 @@ Classe = 2 and Last Purchase before than 2024 Value Purchased - Discount of 13 %
 Classe = 2 and no Purchase in the last 5 years Value Purchased - Discount of 5 % 
 Classe = 3 and Last Purchase in 2024 Value Purchased - Discount of 3 % 
 Classe = 3 and Last Purchase before than 2024 Value Purchased - Discount of 0 % 
-Examples: 
-Input: 
-Cristiani Eccher 
-1000.00 
-1 
-2024 
-Would output as: 
-Cristiani Eccher 
-700.00 
+
+
+What I have accomplished:
+1. Automatically determine what kind of file is being read: txt, csv, json.
+2. Processing incoming data and manipulate it based on requirments.
+3. Writing final data to a new file.
+4. Covered cruicial code by unit tests.
+5. Added comment
+
