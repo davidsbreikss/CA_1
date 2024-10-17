@@ -37,7 +37,7 @@ public class CustomerProcessorTest {
         // When: Processing the customers
         List<Customer> processedCustomers = processor.processCustomers(customers);
 
-        // Then: Assert that all customers are processed (none are filtered out)
+        // Assert that all customers are processed (none are filtered out)
         assertEquals(3, processedCustomers.size());
 
         // Check discounts applied to each customer
@@ -49,7 +49,7 @@ public class CustomerProcessorTest {
     // Test for handling invalid customers and ensuring they are filtered out
     @Test
     void testProcessInvalidCustomers() {
-        // Given: A mocked Logger instance
+        // A mocked Logger instance
         Logger mockLogger = mock(Logger.class);
         CustomerProcessor processor = new CustomerProcessor(mockLogger); // Initialize the processor with the mocked logger
 
@@ -60,10 +60,10 @@ public class CustomerProcessorTest {
                 new Customer("John Doe", -50.00, 1, 2023) // Invalid total purchase (negative value)
         );
 
-        // When: Processing the invalid customers
+        // Processing the invalid customers
         List<Customer> processedCustomers = processor.processCustomers(customers);
 
-        // Then: Assert that no valid customers were processed (all were filtered out)
+        // Assert that no valid customers were processed (all were filtered out)
         assertEquals(0, processedCustomers.size());
 
         // Verify that logger logged 3 error messages, one for each invalid customer
@@ -73,17 +73,17 @@ public class CustomerProcessorTest {
     // Test for verifying that logging occurs during processing
     @Test
     void testLogging() {
-        // Given: A mocked Logger instance
+        // A mocked Logger instance
         Logger mockLogger = mock(Logger.class);
         CustomerProcessor processor = new CustomerProcessor(mockLogger); // Initialize the processor with the mocked logger
 
         // Creating a valid customer
         List<Customer> customers = List.of(new Customer("John Doe", 100.00, 1, 2024));
 
-        // When: Processing the valid customer
+        // Processing the valid customer
         processor.processCustomers(customers);
 
-        // Then: Verify that log messages were generated
+        // Verify that log messages were generated
         verify(mockLogger).log(eq(CustomerProcessor.class.getSimpleName()), eq(Logger.LogLevel.INFO), contains("Customers in input file before processing: 1"));
         verify(mockLogger).log(eq(CustomerProcessor.class.getSimpleName()), eq(Logger.LogLevel.INFO), contains("Customers in output file after processing: 1"));
     }

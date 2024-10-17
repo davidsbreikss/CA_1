@@ -35,7 +35,7 @@ public class CustomerWriterJSONTest {
     // Test for successfully writing valid customer data to a JSON file
     @Test
     void testWriteValidCustomers() throws IOException {
-        // Given: a valid list of customers and a file path
+        // a valid list of customers and a file path
         List<Customer> customers = List.of(
                 new Customer("John Doe", 20.00, 2, 2023),
                 new Customer("Jane Smith", 25.00, 1, 2022)
@@ -58,16 +58,16 @@ public class CustomerWriterJSONTest {
     // Test for handling attempts to write an empty list of customers
     @Test
     void testWriteEmptyListThrowsException() {
-        // Given: an empty list of customers
+        // an empty list of customers
         List<Customer> emptyCustomerList = new ArrayList<>();
         filePath = "src/test/resources/JSONWriter/customers.json"; // Set the file path for the output
 
-        // When: attempting to write the empty customer list
+        // attempting to write the empty customer list
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             writer.writeCustomers(emptyCustomerList, filePath);
         });
 
-        // Then: assert that an IllegalArgumentException is thrown with the expected message
+        // assert that an IllegalArgumentException is thrown with the expected message
         assertEquals("Cannot write to JSON file. Customer list is empty: " + filePath, exception.getMessage());
     }
 }

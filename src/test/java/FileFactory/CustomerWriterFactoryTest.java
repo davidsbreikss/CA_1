@@ -46,7 +46,7 @@ public class CustomerWriterFactoryTest {
 
     @Test
     void testGetWriterWithInvalidExtension() {
-        // Act and Assert: Ensure an exception is thrown for unsupported file extensions
+        // Ensure an exception is thrown for unsupported file extensions
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getWriter("test.invalid");
         });
@@ -56,7 +56,7 @@ public class CustomerWriterFactoryTest {
 
     @Test
     void testGetWriterWithNoExtension() {
-        // Act and Assert: Ensure an exception is thrown when no file extension is provided
+        // Ensure an exception is thrown when no file extension is provided
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getWriter("file");
         });
@@ -66,7 +66,7 @@ public class CustomerWriterFactoryTest {
 
     @Test
     void testGetWriterWithEmptyFileName() {
-        // Act and Assert: Ensure an exception is thrown for empty file names
+        // Ensure an exception is thrown for empty file names
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getWriter("");
         });
@@ -76,7 +76,7 @@ public class CustomerWriterFactoryTest {
 
     @Test
     void testGetWriterWithUnsupportedFileType() {
-        // Act and Assert: Ensure an exception is thrown for unsupported file types
+        // Ensure an exception is thrown for unsupported file types
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getWriter("test.pdf");
         });

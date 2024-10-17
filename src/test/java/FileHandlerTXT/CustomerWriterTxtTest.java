@@ -33,14 +33,14 @@ public class CustomerWriterTxtTest {
     // Test for successfully writing customer data to a text file
     @Test
     void testWriteCustomers() throws IOException {
-        // Given: A valid list of customers and a file path
+        // A valid list of customers and a file path
         filePath = "src/test/resources/TXTReader/customers.txt";
         List<Customer> customers = Arrays.asList(
                 new Customer("John Doe", 121.22, 1, 2022),
                 new Customer("Kevin Murray", 1243.98, 2, 2023),
                 new Customer("Max Maxwell", 560.00, 1, 2018));
 
-        // When: Writing the customers to the specified text file
+        // Writing the customers to the specified text file
         writer.writeCustomers(customers, filePath);
 
         // Read the lines from the written file for verification
@@ -62,16 +62,16 @@ public class CustomerWriterTxtTest {
     // Test for handling attempts to write an empty list of customers
     @Test
     void testEmptyList() {
-        // Given: An empty list of customers
+        // An empty list of customers
         filePath = "src/test/resources/TXTReader/customers.txt";
         List<Customer> customers = new ArrayList<>();
 
-        // When: Attempting to write the empty customer list, an exception is expected
+        // Attempting to write the empty customer list, an exception is expected
         Exception exception = assertThrows(IOException.class, () -> {
             writer.writeCustomers(customers, filePath);
         });
 
-        // Then: Assert that the exception message indicates the list is empty
+        // Assert that the exception message indicates the list is empty
         assertTrue(exception.getMessage().contains("Cannot write empty customer list to file"), "Expected exception message not found.");
     }
 }

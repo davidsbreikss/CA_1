@@ -61,15 +61,15 @@ public class CustomerReaderJSONTest {
     // Test for handling invalid JSON input
     @Test
     void testReadInvalidJson() {
-        // Given: a JSON file path with malformed data
+        // a JSON file path with malformed data
         filePath = "src/test/resources/JSONReader/invalid_customers.json";
 
-        // When: attempting to read customers from the invalid JSON file
+        // attempting to read customers from the invalid JSON file
         Exception exception = assertThrows(IOException.class, () -> {
             reader.readCustomers(filePath);
         });
 
-        // Then: assert that a mapping or parsing exception is thrown
+        // assert that a mapping or parsing exception is thrown
         assertTrue(exception.getMessage().contains("Malformed JSON in file") ||
                 exception.getMessage().contains("Mapping error in JSON file"));
     }

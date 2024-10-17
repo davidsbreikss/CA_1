@@ -17,6 +17,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
+
+    // Link to GitHub repository for this project
+    // https://github.com/davidsbreikss/CA_1
+
     public static void main(String[] args) {
 
         String inputFilePath = "src/main/resources/customers.json"; // Path to the input customer data file

@@ -18,7 +18,7 @@ public class Customer {
     @JsonIgnore // Ignores this field during JSON serialization
     private final double totalPurchase; // Total purchase amount by the customer
     @JsonIgnore // Ignores this field during JSON serialization
-    private final int customerClass; // Class of the customer (e.g., 1, 2, or 3)
+    private final int customerClass; // Class of the customer
     @JsonIgnore // Ignores this field during JSON serialization
     private final int lastPurchase; // Year of the last purchase made by the customer
     @JsonProperty("discountedValue") // Annotates the discountedValue field for JSON serialization

@@ -30,13 +30,13 @@ public class CustomerReaderTxtTest {
     // Test for successfully reading valid customer data from a text file
     @Test
     void testReadValidCustomers() throws IOException, EmptyFileException {
-        // Given: A valid customers file
+        // A valid customers file
         filePath = "src/test/resources/TXTReader/valid_customers.txt"; // Adjust the path as needed
 
-        // When: Reading customers from the file
+        // Reading customers from the file
         List<Customer> customers = reader.readCustomers(filePath);
 
-        // Then: Verify the content of the customer list
+        // Verify the content of the customer list
         assertNotNull(customers, "Customer list should not be null.");
         assertEquals(3, customers.size(), "We expect 3 valid customers."); // We expect 3 valid customers
 
@@ -62,15 +62,15 @@ public class CustomerReaderTxtTest {
     // Test for handling empty customer file
     @Test
     void testReadEmptyFile() throws IOException, EmptyFileException {
-        // Given: An empty customers file
+        // An empty customers file
         filePath = "src/test/resources/TXTReader/customers_empty_file.txt";
 
-        // When: Attempting to read customers from the empty file, an exception is expected
+        // Attempting to read customers from the empty file, an exception is expected
         Exception exception = assertThrows(EmptyFileException.class, () -> {
             reader.readCustomers(filePath);
         });
 
-        // Then: Assert that the exception message indicates the file is empty
+        // Assert that the exception message indicates the file is empty
         assertTrue(exception.getMessage().contains("The file is empty"), "Expected exception message not found.");
     }
 }

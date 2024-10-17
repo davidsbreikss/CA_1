@@ -34,7 +34,7 @@ public class CustomerReaderCSVTest {
         // Act: Read customers from the CSV file
         List<Customer> customers = reader.readCustomers(filePath);
 
-        // Assert: Verify correct customer data
+        // Verify correct customer data
         assertEquals(2, customers.size()); // Check the number of customers read
 
         // Verify details of the first customer
@@ -55,7 +55,7 @@ public class CustomerReaderCSVTest {
         // Specify the path to the test CSV file that is empty
         filePath = "src/test/resources/CSVReader/TestEmptyCustomers.csv";
 
-        // Act and Assert: Ensure an EmptyFileException is thrown for an empty file
+        // Ensure an EmptyFileException is thrown for an empty file
         Exception exception = assertThrows(EmptyFileException.class, () -> {
             reader.readCustomers(filePath);
         });
@@ -70,7 +70,7 @@ public class CustomerReaderCSVTest {
 
         // Act: Read customers from the file
         List<Customer> customers = reader.readCustomers(filePath);
-        // Assert: Verify that the method skips customers with missing fields
+        // Verify that the method skips customers with missing fields
         assertEquals(1, customers.size()); // Only valid customers should be present
     }
 
@@ -79,9 +79,9 @@ public class CustomerReaderCSVTest {
         // Specify the path to the test CSV file with invalid number formats
         filePath = "src/test/resources/CSVReader/TestInvalidNumberCustomers.csv";
 
-        // Act: Read customers from the file
+        // Read customers from the file
         List<Customer> customers = reader.readCustomers(filePath);
-        // Assert: Verify that the method skips customers with invalid number formats
+        // Verify that the method skips customers with invalid number formats
         assertEquals(1, customers.size()); // Only valid customers should be present
     }
 
@@ -90,15 +90,15 @@ public class CustomerReaderCSVTest {
         // Specify the path to the test CSV file with empty fields
         filePath = "src/test/resources/CSVReader/TestEmptyFields";
 
-        // Act: Read customers from the file
+        // Read customers from the file
         List<Customer> customers = reader.readCustomers(filePath);
-        // Assert: Verify that the method skips customers with empty fields
+        // Verify that the method skips customers with empty fields
         assertEquals(1, customers.size()); // Only valid customers should be present
     }
 
     @Test
     void testReadCustomersNonExistentFile() {
-        // Execute & Verify: Ensure IOException is thrown for a non-existent file
+        // Ensure IOException is thrown for a non-existent file
         assertThrows(IOException.class, () -> reader.readCustomers("non_existent_file.csv"));
     }
 }

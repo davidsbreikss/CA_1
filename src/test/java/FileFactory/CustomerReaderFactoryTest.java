@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.mockito.Mockito;
 
 public class CustomerReaderFactoryTest {
@@ -49,7 +50,7 @@ public class CustomerReaderFactoryTest {
 
     @Test
     void testGetReaderWithInvalidExtension() {
-        // Act and Assert: Ensure an exception is thrown for unsupported file extensions
+        // Ensure an exception is thrown for unsupported file extensions
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getReader("test.invalid");
         });
@@ -59,7 +60,7 @@ public class CustomerReaderFactoryTest {
 
     @Test
     void testGetReaderWithNoExtension() {
-        // Act and Assert: Ensure an exception is thrown when no file extension is provided
+        // Ensure an exception is thrown when no file extension is provided
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getReader("file");
         });
@@ -69,7 +70,7 @@ public class CustomerReaderFactoryTest {
 
     @Test
     void testGetReaderWithEmptyFileName() {
-        // Act and Assert: Ensure an exception is thrown for empty file names
+        // Ensure an exception is thrown for empty file names
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getReader("");
         });
@@ -79,7 +80,7 @@ public class CustomerReaderFactoryTest {
 
     @Test
     void testGetReaderWithUnsupportedFileType() {
-        // Act and Assert: Ensure an exception is thrown for unsupported file types
+        // Ensure an exception is thrown for unsupported file types
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             factory.getReader("test.pdf");
         });

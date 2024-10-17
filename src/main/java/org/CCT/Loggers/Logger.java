@@ -77,7 +77,7 @@ public class Logger {
         return String.format("%s [%s] [%s.%s]: %s", LocalDateTime.now(), level, className, methodName, message);
     }
 
-    // Fallback logging to console (used when log writing fails)
+    // Fallback logging to console
     private void logToConsole(LogLevel level, String message) {
         // Print the message to standard error with a timestamp
         System.err.printf("%s [%s]: %s%n", LocalDateTime.now(), level, message);

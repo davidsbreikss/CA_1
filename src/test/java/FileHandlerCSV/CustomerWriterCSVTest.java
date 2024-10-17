@@ -39,16 +39,16 @@ public class CustomerWriterCSVTest {
                 new Customer("Max Maxwell", 560.00, 1, 2018)
         );
 
-        // Act: Write customers to the CSV file
+        // Write customers to the CSV file
         writer.writeCustomers(customers, filePath);
 
         // Read the lines from the written CSV file
         List<String> lines = Files.readAllLines(Paths.get(filePath));
 
-        // Assert: Check the number of lines written matches the number of customers
+        // Check the number of lines written matches the number of customers
         assertEquals(customers.size(), lines.size(), "Number of lines written does not match number of customers");
 
-        // Assert: Check each line against the expected format
+        // Check each line against the expected format
         for (int i = 0; i < customers.size(); i++) {
             Customer customer = customers.get(i);
             String expectedLine = String.format("%s,%.2f", customer.getFullName(), customer.getDiscountedValue());
@@ -62,7 +62,7 @@ public class CustomerWriterCSVTest {
         filePath = "src/test/resources/CSVWriter/TestCustomers.csv";
         List<Customer> customers = new ArrayList<>(); // Create an empty list of customers
 
-        // Act and Assert: Ensure IOException is thrown for an empty customer list
+        // Ensure IOException is thrown for an empty customer list
         Exception exception = assertThrows(IOException.class, () -> {
             writer.writeCustomers(customers, filePath);
         });
