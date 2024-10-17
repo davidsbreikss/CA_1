@@ -23,7 +23,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String inputFilePath = "src/main/resources/customers.json"; // Path to the input customer data file
+        String inputFilePath = "src/main/resources/customers.txt"; // Path to the input customer data file
         String outputDirectory = "output"; // Directory where output files will be stored
 
         // Initialize the logger, factories, and processor
