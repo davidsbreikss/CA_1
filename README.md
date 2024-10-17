@@ -41,3 +41,10 @@ What I have accomplished:
 4. Covered cruicial code by unit tests.
 5. Added comment
 
+My Workflow:
+1. I tried following programming OOP and SOLID principles for this project.
+2. Each class in this project has been made for particular purpose (e.g FileReader class for reading file only, Porcessor class for data and entity precossing)
+3. AI utilization in the project: The project leverages AI to generate code comments, solicit best practices for architectural design, and request suggestions for code refactoring.
+4. Once I complete a piece of code and verify that it meets the specified requirements, I consult ChatGPT for advice on refactoring and identifying potential issues. I then implement changes based on the feedback if it aligns with my project needs.
+
+
